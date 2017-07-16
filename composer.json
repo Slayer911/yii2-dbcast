@@ -1,0 +1,25 @@
+{
+  "name": "slayer911/yii2-dbcast",
+  "type": "yii2-extension",
+  "description": "Auto migration",
+  "keywords": [
+    "yii2",
+    "migrate",
+    "migration"
+  ],
+  "autoload": {
+    "psr-4": {
+      "DBCast\\": ""
+    }
+  },
+  "version" : "1.0.0",
+  "homepage": "",
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": ">=2.0.6"
+  },
+  "extra": {
+    "bootstrap": "DBCast\\Bootstrap"
+  }
+}
