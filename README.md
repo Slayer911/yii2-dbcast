@@ -1,8 +1,7 @@
 Yii2 DbCast
 =================
 Auto generate migration by your changes DB schema.
-Module create cast of previous DB schema, and current. By the different - 
-system create Yii migrate on OOP style.
+Module create cast of previous DB schema, and current.
 
 Currently supports only **MySql**
 
@@ -16,7 +15,7 @@ After vendor was installed - create first DBCast.
 ```
  php yii migrate/cast-save
 ```
-If in this step you have error - add to console config (main-local.php) next data:
+If in this step you have an error - add to console config (main-local.php) next data:
 ```$xslt
 <?php
 return [
