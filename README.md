@@ -37,15 +37,8 @@ Using
 ------
 Default Yii controller was extended by DbCast Migrate controller.
 Now you have next commands:
-![alt text](newCommand.jpg) 
+![newcommands](https://user-images.githubusercontent.com/9704032/28248769-cc5c1cc4-6a52-11e7-825c-a1ff07e44eeb.jpg)
 * migrate/cast-commit
 
 Create new migration.
-![alt text](castCommit.jpg) 
-
-
- 
-
-
-
-
+![castcommit](https://user-images.githubusercontent.com/9704032/28248770-cc5d09b8-6a52-11e7-9575-52d18ee98aab.jpg) 
