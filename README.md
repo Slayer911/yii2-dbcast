@@ -9,7 +9,7 @@ Currently supports only **MySql**
 Install
 -------
 ```
-composer config repositories.dbCast git https://github.com/Slayer911/DBCast.git
+composer config repositories.dbCast git https://github.com/Slayer911/yii2-dbcast.git
 composer require --dev "slayer911/yii2-dbcast:*"
 ```
 After vendor was installed - create first DBCast.
