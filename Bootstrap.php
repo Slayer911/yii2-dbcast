@@ -17,15 +17,18 @@ class Bootstrap implements BootstrapInterface
      */
     public function bootstrap($app)
     {
-        // Hand config is a priority
-        if(empty($app->controllerMap['migrate'])){
-            $controllerMap                 = [
-                    'migrate' => [
-                        'class'   => \DBCast\controllers\MigrateController::class,
-                        'develop' => true
-                    ],
-                ] + $app->controllerMap;
-            $app->controllerMap = $controllerMap;
+        // Only console application
+        if(is_a(\Yii::$app,\yii\console\Application::className())){
+            // Hand config is a priority
+            if(empty($app->controllerMap['migrate'])){
+                $controllerMap                 = [
+                        'migrate' => [
+                            'class'   => \DBCast\controllers\MigrateController::class,
+                            'develop' => true
+                        ],
+                    ] + $app->controllerMap;
+                $app->controllerMap = $controllerMap;
+            }
         }
     }
 }
