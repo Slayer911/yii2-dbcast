@@ -56,8 +56,8 @@ class CastCodeFile extends CodeFile
      */
     public function saveFile()
     {
-        $newDirMode  = '0777';
-        $newFileMode = '0666';
+        $newDirMode  = 0777;
+        $newFileMode = 0666;
         if (!empty(\Yii::$app) && !empty(\Yii::$app->controller)) {
             $module      = \Yii::$app->controller->module;
             if(!empty($module->newFileMode)){
