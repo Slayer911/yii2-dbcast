@@ -5,7 +5,6 @@ use DBCast\core\CastController;
 use DBCast\generator\Generator;
 use DBCast\helpers\ConsoleHelper;
 use yii\console\Exception;
-use yii\console\ExitCode;
 use yii\helpers\Console;
 
 /**
@@ -207,7 +206,7 @@ class MigrateController extends \yii\console\controllers\MigrateController
         if (empty($migrations)) {
             $this->stdout("No migration has been done before.\n", Console::FG_YELLOW);
 
-            return ExitCode::OK;
+            return self::EXIT_CODE_NORMAL;
         }
 
         $migrations = array_keys($migrations);
@@ -232,7 +231,7 @@ class MigrateController extends \yii\console\controllers\MigrateController
                     $this->stdout("\n$reverted from $n " . ($reverted === 1 ? 'migration was' : 'migrations were') . " reverted.\n", Console::FG_RED);
                     $this->stdout("\nMigration failed. The rest of the migrations are canceled.\n", Console::FG_RED);
 
-                    return ExitCode::UNSPECIFIED_ERROR;
+                    return self::EXIT_CODE_ERROR;
                 }
                 $reverted++;
             }
@@ -243,7 +242,7 @@ class MigrateController extends \yii\console\controllers\MigrateController
         // Save new cast Db
         $this->getCastController()->castDb->saveCurrentCast();
 
-        return ExitCode::OK;
+        return self::EXIT_CODE_NORMAL;
     }
 
 
@@ -259,7 +258,7 @@ class MigrateController extends \yii\console\controllers\MigrateController
         if (empty($migrations)) {
             $this->stdout("Not found new migrations. Your system is up-to-date.\n", Console::FG_GREEN);
 
-            return ExitCode::OK;
+            return self::EXIT_CODE_NORMAL;
         }
 
         $total = count($migrations);
@@ -293,7 +292,7 @@ class MigrateController extends \yii\console\controllers\MigrateController
                     $this->stdout("\n$applied from $n " . ($applied === 1 ? 'migration was' : 'migrations were') . " applied.\n", Console::FG_RED);
                     $this->stdout("\nMigration failed. The rest of the migrations are canceled.\n", Console::FG_RED);
 
-                    return ExitCode::UNSPECIFIED_ERROR;
+                    return self::EXIT_CODE_ERROR;
                 }
                 $applied++;
             }
