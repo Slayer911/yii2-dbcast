@@ -1,16 +1,15 @@
 Yii2 DbCast
 =================
-Auto generate migration by your changes DB schema.
-Module create cast of previous DB schema, and current.
+Automatic generation of migration when changing the database schema. The module creates a snapshot of the previous database schema and the current one.
 
-Currently supports only **MySql**
+Currently, supports only **MySql**
 
 Install
 -------
 ```
 composer require --dev "slayer911/yii2-dbcast:*"
 ```
-After vendor was installed - create first DBCast.
+After installing the vendor, create the first DBCast.
 ```
  php yii migrate/cast-save
 ```
@@ -33,8 +32,8 @@ return [
 
 Using
 ------
-Default Yii controller was extended by DbCast Migrate controller.
-Now you have next commands:
+The standard Yii controller has been extended with the DbCast Migrate controller.
+You now have the following commands:
 ![newcommands](https://user-images.githubusercontent.com/9704032/28248769-cc5c1cc4-6a52-11e7-825c-a1ff07e44eeb.jpg)
 * migrate/cast-commit
 

@@ -565,7 +565,12 @@ class CastDiffMySql extends CastDiffBase
                     $oldColumn  = $oldTableColumns[$columnTitle];
                     $needChange = false;
                     foreach ($columnData as $key => $value) {
-                        if ((string)$oldColumn[$key] != (string)$value) {
+                        if (is_array($value) || is_array($oldColumn[$key])) {
+                            if ((array)$oldColumn[$key] !== (array)$value) {
+                                $needChange = true;
+                                break;
+                            }
+                        } elseif ((string)$oldColumn[$key] !== (string)$value) {
                             $needChange = true;
                             break;
                         }
